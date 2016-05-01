@@ -1,21 +1,18 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="phoneListApp">
 <head>
     <meta charset="utf-8">
     <title>My AngularJS List App</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/app.css">
     <script src="bower_components/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
 </head>
-<body>
+<body ng-controller="phoneListController">
     <ul>
-        <li>
-            iPhone 4S
-            <p>Got smart assistant Siri to your iPhone</p>
-        </li>
-        <li>
-            iPhone 5S
-            <p>Got touch id with iPhone</p>
+        <li ng-repeat="phone in phones">
+            {{phone.name}}
+            <p>{{phone.snippet}}</p>
         </li>
     </ul>
 </body>
