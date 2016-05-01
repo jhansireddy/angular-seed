@@ -9,11 +9,19 @@
     <script src="js/controllers.js"></script>
 </head>
 <body ng-controller="phoneListController">
-    <ul>
-        <li ng-repeat="phone in phones">
-            {{phone.name}}
-            <p>{{phone.snippet}}</p>
-        </li>
-    </ul>
+
+<div class="row">
+    <div class="col-md-2">
+        <input ng-model="query"/>
+    </div>
+    <div class="col-md-8">
+        <ul>
+            <li ng-repeat="phone in phones | filter:query">
+                {{phone.name}}
+                <p>{{phone.snippet}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
